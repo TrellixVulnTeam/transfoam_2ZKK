@@ -1,0 +1,3 @@
+vivarium-core>=0.3.4
+cobra==0.21.0
+Arpeggio
