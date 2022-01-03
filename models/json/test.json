@@ -83367,6 +83367,30 @@
 "name":"(R)-3-hydroxybutyrate",
 "compartment":"c",
 "formula":"C4H6O2"
+},
+{
+"id":"phleth_e",
+"name":"Phenylethylene (styrene)",
+"compartment":"e",
+"formula":"C8H8"
+},
+{
+"id":"phleth_p",
+"name":"Phenylethylene (styrene)",
+"compartment":"p",
+"formula":"C8H8"
+},
+{
+"id":"phleth_c",
+"name":"Phenylethylene (styrene)",
+"compartment":"c",
+"formula":"C8H8"
+},
+{
+"id":"phloxi_s2_c",
+"name":"(S)-2-phenyloxirane",
+"compartment":"c",
+"formula":"C8H8O"
 }
 ],
 "reactions":[
@@ -84279,7 +84303,7 @@
 "coa_c":-1.0,
 "ppi_c":1.0
 },
-"lower_bound":0.0,
+"lower_bound":1,
 "upper_bound":1000.0,
 "gene_reaction_rule":"b4069",
 "subsystem":"Pyruvate Metabolism",
@@ -87375,8 +87399,8 @@
 "coa_c":1.0,
 "pi_c":-1.0
 },
-"lower_bound":-1000.0,
-"upper_bound":1000.0,
+"lower_bound":0,
+"upper_bound":0,
 "gene_reaction_rule":"b2297 or b2458",
 "subsystem":"Pyruvate Metabolism",
 "notes":{
@@ -87519,8 +87543,8 @@
 "adp_c":1.0,
 "atp_c":-1.0
 },
-"lower_bound":-1000.0,
-"upper_bound":1000.0,
+"lower_bound":0,
+"upper_bound":0,
 "gene_reaction_rule":"b2296 or b1849 or b3115",
 "subsystem":"Pyruvate Metabolism",
 "notes":{
@@ -92387,7 +92411,7 @@
 "metabolites":{
 "glc__D_e":-1.0
 },
-"lower_bound":-10.0,
+"lower_bound":-1.0,
 "upper_bound":1000.0,
 "gene_reaction_rule":"",
 "subsystem":"Extracellular exchange",
@@ -166839,7 +166863,7 @@
 "metabolites":{
 "o2_e":-1.0
 },
-"lower_bound":-1000.0,
+"lower_bound":-20.0,
 "upper_bound":1000.0,
 "gene_reaction_rule":"",
 "subsystem":"Extracellular exchange",
@@ -189149,7 +189173,6 @@
 "lower_bound":0.0,
 "upper_bound":1000.0,
 "gene_reaction_rule":"",
-"objective_coefficient":1.0,
 "subsystem":"Biomass and maintenance functions",
 "notes":{
 "original_bigg_ids":[
@@ -190536,7 +190559,7 @@
 "accoa_c":-2.0,
 "coa_c":1.0
 },
-"lower_bound":0.0,
+"lower_bound":-1000.0,
 "upper_bound":1000.0,
 "gene_reaction_rule":"( phaA )",
 "subsystem":"pha Plasmid"
@@ -190551,7 +190574,7 @@
 "nadp_c":1.0,
 "nadph_c":-1.0
 },
-"lower_bound":0.0,
+"lower_bound":-1000.0,
 "upper_bound":1000.0,
 "gene_reaction_rule":"( phaB )",
 "subsystem":"pha Plasmid"
@@ -190564,10 +190587,108 @@
 "hbcoa__3R_c":-1.0,
 "phb_c":1.0
 },
-"lower_bound":0.0,
+"lower_bound":-1000.0,
 "upper_bound":1000.0,
 "gene_reaction_rule":"( phaC )",
 "subsystem":"pha Plasmid"
+},
+{
+"id":"DM_phb_c",
+"name":"(R)-3-hydroxybutyrate demand",
+"metabolites":{
+"phb_c":-1
+},
+"lower_bound":0,
+"upper_bound":1000.0,
+"gene_reaction_rule":"",
+"annotation":{
+"sbo":"SBO:0000628"
+}
+},
+{
+"id":"STYtpp",
+"name":"Porin",
+"metabolites":{
+"phleth_e":-1.0,
+"phleth_p":1.0
+},
+"lower_bound":-1000.0,
+"upper_bound":1000.0,
+"gene_reaction_rule":"",
+"subsystem":"sty Plasmid"
+},
+{
+"id":"STYEr",
+"name":"Styrene Pump - ATPase",
+"metabolites":{
+"adp_c":1.0,
+"atp_c":-1.0,
+"h2o_c":-1.0,
+"h_c":1.0,
+"phleth_c":1.0,
+"phleth_p":-1.0,
+"pi_c":1.0
+},
+"lower_bound":-1000.0,
+"upper_bound":1000.0,
+"gene_reaction_rule":"( styE )",
+"subsystem":"sty Plasmid"
+},
+{
+"id":"STYABr",
+"name":"Styrene Monooxygenase",
+"metabolites":{
+"fad_c":1.0,
+"fadh2_c":-1.0,
+"h2o_c":1.0,
+"h_c":1.0,
+"o2_c":-1.0,
+"phleth_c":-1.0,
+"phloxi_s2_c":1.0
+},
+"lower_bound":-1000.0,
+"upper_bound":1000.0,
+"gene_reaction_rule":"( styAB )",
+"subsystem":"sty Plasmid"
+},
+{
+"id":"STYCr",
+"name":"PHA Synthase Subunit PhaC",
+"metabolites":{
+"pacald_c":1.0,
+"phloxi_s2_c":-1.0
+},
+"lower_bound":-1000.0,
+"upper_bound":1000.0,
+"gene_reaction_rule":"( styC )",
+"subsystem":"pha Plasmid"
+},
+{
+"id":"EX_phleth_e",
+"name":"Phenylethylene (styrene) exchange",
+"metabolites":{
+"phleth_e":-1
+},
+"lower_bound":-0.0,
+"upper_bound":1000.0,
+"gene_reaction_rule":"",
+"annotation":{
+"sbo":"SBO:0000627"
+}
+},
+{
+"id":"DM_accoa_c",
+"name":"Acetyl-CoA demand",
+"metabolites":{
+"accoa_c":-1
+},
+"lower_bound":0,
+"upper_bound":1000.0,
+"gene_reaction_rule":"",
+"objective_coefficient":1.0,
+"annotation":{
+"sbo":"SBO:0000628"
+}
 }
 ],
 "genes":[
@@ -248127,6 +248248,18 @@
 },
 {
 "id":"phaC",
+"name":""
+},
+{
+"id":"styE",
+"name":""
+},
+{
+"id":"styAB",
+"name":""
+},
+{
+"id":"styC",
 "name":""
 }
 ],

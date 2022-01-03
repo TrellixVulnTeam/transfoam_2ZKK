@@ -1,11 +1,21 @@
 # Transfoam Metabolic Modeling
 
-**Changelog**
+**Instructions**
 
-9/16/21\
-	- downloaded 5 existing metabolic models for K-12 and W strains in sbml format
+COBRApy\
+	- navigate to transfoam/bioreactor/library and activate virtual environment with 'source ../env/bin/activate'
+	- start jupyter lab with 'jupyter lab'
+	- run notebooks
+		- model.ipynb adds plasmid reactions to model
+		- data.ipynb extracts model data
+		- yield.ipynb is for FBA and knockout analysis
 
-10/14/21\
-	- downloaded 2 metabolic models for W strain in mat format\
-	- followed cobra toolbox documentation to browse genes, reactions, and metabolites in both reactions\
-	- set glucose and oxygen uptake constraints and viewed objective function
+MATLAB\
+	- add transfoam/matlab to working path
+	- run scripts
+		- mostly for robustness analysis and optpipe
+
+R\
+	- open r.Rproj in RStudio
+	- run scripts
+		- figure generation with ggplot
