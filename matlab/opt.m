@@ -6,11 +6,14 @@ changeCobraSolver('gurobi6');
 
 %% import model
 
-cobra_model = readCbModel('../models/mat/GM_iML1515.mat');
+cobra_model = readCbModel('../models/mat/GM_gludiML1515.mat');
 
 cobra_model = changeRxnBounds(cobra_model, 'EX_phleth_e', -10, 'l');
 cobra_model = changeRxnBounds(cobra_model, 'EX_o2_e', -20, 'l');
-cobra_model = changeRxnBounds(cobra_model, 'EX_glc__D_e', 0, 'l');
+cobra_model = changeRxnBounds(cobra_model, 'EX_glc__D_e', -10, 'l');
+
+% cobra_model = addDemandReaction(cobra_model, {'accoa_c'});
+% cobra_model = addDemandReaction(cobra_model, {'aacoa_c'});
 
 % cobra_model = changeObjective(cobra_model,'DM_phb_c');
 
@@ -22,7 +25,7 @@ warning('off', 'all');
 
 % parameter settings
 BM_rxn='BIOMASS_Ec_iML1515_core_75p37M';
-target_rxn='DM_phb_c';
+target_rxn='DM_aacoa_c';
 max_KOs=3;
 branch='';
 
