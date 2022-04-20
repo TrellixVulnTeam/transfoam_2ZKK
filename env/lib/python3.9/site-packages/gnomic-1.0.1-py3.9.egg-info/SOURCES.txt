@@ -1,0 +1,15 @@
+README.rst
+setup.cfg
+setup.py
+gnomic/__init__.py
+gnomic/formatters.py
+gnomic/genotype.py
+gnomic/grammar.py
+gnomic/semantics.py
+gnomic/types.py
+gnomic/utils.py
+gnomic.egg-info/PKG-INFO
+gnomic.egg-info/SOURCES.txt
+gnomic.egg-info/dependency_links.txt
+gnomic.egg-info/requires.txt
+gnomic.egg-info/top_level.txt

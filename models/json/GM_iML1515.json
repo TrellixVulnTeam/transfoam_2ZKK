@@ -190562,7 +190562,7 @@
 },
 "lower_bound":-1000.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"( phaA )",
+"gene_reaction_rule":"phaA",
 "subsystem":"pha Plasmid"
 },
 {
@@ -190577,7 +190577,7 @@
 },
 "lower_bound":-1000.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"( phaB )",
+"gene_reaction_rule":"phaB",
 "subsystem":"pha Plasmid"
 },
 {
@@ -190590,7 +190590,7 @@
 },
 "lower_bound":-1000.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"( phaC )",
+"gene_reaction_rule":"phaC",
 "subsystem":"pha Plasmid"
 },
 {
@@ -190632,7 +190632,7 @@
 },
 "lower_bound":-1000.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"( styE )",
+"gene_reaction_rule":"styE",
 "subsystem":"sty Plasmid"
 },
 {
@@ -190649,7 +190649,7 @@
 },
 "lower_bound":-1000.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"( styAB )",
+"gene_reaction_rule":"styAB",
 "subsystem":"sty Plasmid"
 },
 {
@@ -190661,7 +190661,7 @@
 },
 "lower_bound":-1000.0,
 "upper_bound":1000.0,
-"gene_reaction_rule":"( styC )",
+"gene_reaction_rule":"styC",
 "subsystem":"sty Plasmid"
 },
 {
