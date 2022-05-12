@@ -19,15 +19,15 @@ model = addDemandReaction(model, {'accoa_c'});
 
 %% set constraints
 
-model = changeRxnBounds(model, 'EX_phleth_e', -6.159, 'l'); %-6.159
+model = changeRxnBounds(model, 'EX_phleth_e', 0, 'l'); %-6.159
 model = changeRxnBounds(model, 'EX_o2_e', -20, 'l'); 
-model = changeRxnBounds(model, 'EX_glc__D_e', -0, 'l'); %-10
+model = changeRxnBounds(model, 'EX_glc__D_e', -10, 'l'); %-10
 % model = changeRxnBounds(model, 'EX_so4_e', -20, 'l');
 
 % model = changeRxnBounds(model, 'GAPN', -9.094641, 'l');
 
-model = changeObjective(model,'BIOMASS_Ec_iML1515_core_75p37M');
-% model = changeObjective(model,'DM_phb_c');
+% model = changeObjective(model,'BIOMASS_Ec_iML1515_core_75p37M');
+model = changeObjective(model,'DM_phb_c');
 % model = changeObjective(model,'ATPM');
 
 %% blocked reactions
@@ -51,8 +51,8 @@ end
 
 figure(1)
 % controlRxn = char('DM_accoa_c');
-% controlRxn = char('EX_glc__D_e');
-controlRxn = char('EX_phleth_e');
+controlRxn = char('EX_glc__D_e');
+% controlRxn = char('EX_phleth_e');
 % controlRxn = char('EX_o2_e');
 [controlFlux, objFlux] = robustnessAnalysis(model, controlRxn);
 % xlim([-14 0])
